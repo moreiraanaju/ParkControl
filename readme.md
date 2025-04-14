@@ -1,0 +1,2 @@
+Oii, esse é um projeto de estudos  de desenvolvimento web - nível iniciante. 
+O objetivo aqui é criar o frontend de uma aplicação de controle de estacionamento usando apenas HTML, CSS e JavaScript, sem utilizar nenhum framework. 
