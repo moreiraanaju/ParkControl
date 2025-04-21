@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content= "Frontend de um Sistema de Controle de Estacionamento">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Ana Ju Moreira">
+        <title> ParkControl - Sistema de Controle de Estacionamento</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+    </head>
+
+    <body>
+        <form action="#" method="post">
+            <input type="text" name="nome" placeholder="Seu nome">
+            <input type="tel" name="numero_celular" placeholder="Número celular">
+            <input type="number" name="numero_ap" placeholder="Número apartamento">
+            <input type="number" name="bloco_ap" placeholder="Bloco Apartamento"> 
+            <input type="text" name="placa_veiculo" placeholder="Placa veículo"> 
+            <input type="text" name="modelo_veiculo" placeholder="Modelo veículo">
+            <input type="color" name="cor_veiculo" placeholder="Cor veículo">
+            <input type="number" name="numero_vaga" placeholder="Número da vaga">
+
+            <label for="data_inicio">Início da reserva:</label>
+            <input type="date" name="data_inicio">
+
+            <label for="data_fim">Término da reserva:</label>
+            <input type="date" name="data_fim">
+
+            <input type="submit" value="Enviar">
+        </form>
+
+        <p id="mensagem" style="color: green;"> </p>
+
+        <div class="botao-ir-listagem">
+            <a href="listagem.html">
+                <button  type= "button"> Ver vagas Disponíveis</button>
+            </a>
+        </div>
+
+    </body>
+
+</html>
+
+
+
