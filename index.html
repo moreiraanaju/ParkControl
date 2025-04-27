@@ -12,32 +12,34 @@
     </head>
 
     <body>
+        <h1>Reserve uma vaga</h1>
         <form action="#" method="post">
-            <input type="text" name="nome" placeholder="Seu nome">
-            <input type="tel" name="numero_celular" placeholder="Número celular">
-            <input type="number" name="numero_ap" placeholder="Número apartamento">
-            <input type="number" name="bloco_ap" placeholder="Bloco Apartamento"> 
-            <input type="text" name="placa_veiculo" placeholder="Placa veículo"> 
-            <input type="text" name="modelo_veiculo" placeholder="Modelo veículo">
-            <input type="color" name="cor_veiculo" placeholder="Cor veículo">
-            <input type="number" name="numero_vaga" placeholder="Número da vaga">
+            <input type="text" name="nome" placeholder="Seu nome" required pattern="[A-Za-zÀ-ÿ\s]+" title="Digite seu nome completo, usando apenas letras">
+            <input type="tel" name="numero_celular" placeholder="Número celular" required pattern = "[0-9]{11}" title="Digite 11 números sem espaços: Exemplo 48999999999">
+            <input type="number" name="numero_ap" placeholder="Número apartamento" required pattern="[0-9]{1,3}" title="Digite até 3 números">
+            <input type="number" name="bloco_ap" placeholder="Bloco Apartamento" required min="1" max="999" title="Digite um número de 1 a 999.">
+            <input type="text" name="placa_veiculo" placeholder="Placa do veículo" required pattern="[A-Z]{3}[0-9][A-Z0-9][0-9]{2}" title="Formato esperado: ABC1D23"> 
+            <input type="text" name="modelo_veiculo" placeholder="Modelo do veículo" required pattern="[A-Za-zÀ-ÿ\s0-9]+" title="Digite a marca e modelo do veículo">
+            <input type="text" name="cor_veiculo" placeholder="Cor do veículo" required>
+            <input type="number" name="numero_vaga" placeholder="Número da vaga" required pattern = "[0-9]{1,3}" title="Digite o número da vaga, até 3 dígitos">
 
             <label for="data_inicio">Início da reserva:</label>
-            <input type="date" name="data_inicio">
+            <input type="date" name="data_inicio" required>
 
             <label for="data_fim">Término da reserva:</label>
-            <input type="date" name="data_fim">
+            <input type="date" name="data_fim" required>
 
             <input type="submit" value="Enviar">
         </form>
 
-        <p id="mensagem" style="color: green;"> </p>
+        <p id="mensagem" style="margin-top: 15px;"></p>
 
         <div class="botao-ir-listagem">
             <a href="listagem.html">
                 <button  type= "button"> Ver vagas Disponíveis</button>
             </a>
         </div>
+
 
     </body>
 
