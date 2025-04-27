@@ -26,7 +26,7 @@
     </tbody>
   </table>
   
-  <a href="index.html">
+  <a href="index.html" class="botao-voltar">
     <button type="button">Voltar para o cadastro</button>
   </a>
 
@@ -49,24 +49,23 @@
         const reserva = reservas.find(r => parseInt(r.numero_vaga) === vaga);
 
         if(reserva) {
-            //Se a vaga estiver ocupada, preenche com os dados da reserva
-            linha.innerHTML = `
-            <td>${vaga}</td>
-            <td>Ocupada</td>
-            <td>${reserva.placa_veiculo}</td>
-            <td>${reserva.nome}</td>
-            <td>${reserva.numero_celular}</td>
-            `;
+        linha.innerHTML = `
+        <td>${vaga}</td>
+        <td>Ocupada</td>
+        <td>${reserva.placa_veiculo}</td>
+        <td>${reserva.nome}</td>
+        <td>${reserva.numero_celular}</td>
+        `;
         } else {
-            //Se não, preenche como vaga disponível
-            linha.innerHTML = `
-            <td>${vaga}</td>
-            <td>Disponivel</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            `;
+          linha.innerHTML = `
+          <td>${vaga}</td>
+          <td class="disponivel">Disponível</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          `;
         }
+
 
         corpoTabela.appendChild(linha);
     }
