@@ -16,6 +16,8 @@
       <tr>
         <th>Vaga</th>
         <th>Status</th>
+        <th>Início da Reserva</th> 
+        <th>Fim da Reserva</th>    
         <th>Placa</th>
         <th>Proprietário</th>
         <th>Contato</th>
@@ -30,48 +32,8 @@
     <button type="button">Voltar para o cadastro</button>
   </a>
 
-  <script>
-    // Pega o elemento <tbody id="corpo-tabela"> da página
-    const corpoTabela = document.getElementById("corpo-tabela");
-    const totalDeVagas = 15;
+  <script src="script-listagem.js" defer></script>
 
-    //pega reservas salvas
-    const reservas = JSON.parse(localStorage.getItem("reservas")) || [];
-    
-    //Cria uma lista apenas com o numero das vagas ocupadas
-    const VagasOcupadas = reservas.map(r => parseInt(r.numero_vaga));
-
-    //De 1 até o total de vagas
-    for ( let vaga = 1;vaga <= totalDeVagas;vaga++) {
-        const linha = document.createElement("tr");
-
-        //Verifica se a vaga está na lista de ocupadas
-        const reserva = reservas.find(r => parseInt(r.numero_vaga) === vaga);
-
-        if(reserva) {
-        linha.innerHTML = `
-        <td>${vaga}</td>
-        <td>Ocupada</td>
-        <td>${reserva.placa_veiculo}</td>
-        <td>${reserva.nome}</td>
-        <td>${reserva.numero_celular}</td>
-        `;
-        } else {
-          linha.innerHTML = `
-          <td>${vaga}</td>
-          <td class="disponivel">Disponível</td>
-          <td>-</td>
-          <td>-</td>
-          <td>-</td>
-          `;
-        }
-
-
-        corpoTabela.appendChild(linha);
-    }
-
-  </script>
-  
 </body>
 
 </html>
